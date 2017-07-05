@@ -1,0 +1,27 @@
+{
+  "name": "enchanted-mango",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vreddi/Enchanted-Mango.git"
+  },
+  "keywords": [
+    "dota"
+  ],
+  "author": "Vishrut Reddi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vreddi/Enchanted-Mango/issues"
+  },
+  "homepage": "https://github.com/vreddi/Enchanted-Mango#readme",
+  "dependencies": {
+    "mocha": "^3.4.2",
+    "mongoose": "^4.11.1",
+    "restify": "^5.0.0"
+  }
+}
