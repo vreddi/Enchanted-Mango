@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,9 @@
   },
   "homepage": "https://github.com/vreddi/Enchanted-Mango#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
     "mocha": "^3.4.2",
-    "mongoose": "^4.11.1",
-    "restify": "^5.0.0"
+    "mongoose": "^4.11.1"
   }
 }
