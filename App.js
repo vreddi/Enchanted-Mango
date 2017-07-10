@@ -6,7 +6,7 @@ const Item = require('./Models/Item');
 let app = express();
 
 mongoose.connect(
-    'mongodb://localhost/enchanted-mango',
+    'mongodb://vreddi:Ibzrg350dx!@enchanted-mango-shard-00-00-e3guv.mongodb.net:27017,enchanted-mango-shard-00-01-e3guv.mongodb.net:27017,enchanted-mango-shard-00-02-e3guv.mongodb.net:27017/admin?ssl=true&replicaSet=Enchanted-Mango-shard-0&authSource=admin',
     {
         useMongoClient: true
     }

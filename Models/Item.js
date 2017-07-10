@@ -14,6 +14,7 @@ const ItemTargetSchema = new Schema({
 const ItemSchema = new Schema({
     name: String,
     abbreviation: String,
+    image: String,
     lore: String,
     category: String,
     construction: [ReducedItemSchema],
