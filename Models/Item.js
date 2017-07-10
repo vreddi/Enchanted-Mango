@@ -1,30 +1,37 @@
 const mongoose = require('mongoose');
+const BonusType =
 const Schema = mongoose.Schema;
 
-const ReducedItemSchema = new Schema({
-    name: { type: String, required: true },
-    cost: { type: Number, require: true }
-});
-
-const ItemTargetSchema = new Schema({
+const AbilityTargetSchema = new Schema({
     type: String,
     target: String
 });
 
+const AbilitySchema = new Schema({
+    name: { type: String, required: true }
+    coolDown: [Number],
+    castRange: Schema.Types.Mixed,
+    description: String,
+    duration: [Number],
+    targetType: AbilityTargetSchema,
+    notes: [String],
+});
+
+const ReducedItemSchema = new Schema({
+    name: { type: String, required: true },
+    cost: { type: Number, required: true }
+});
+
 const ItemSchema = new Schema({
+    ability: [AbilitySchema]
     name: String,
     abbreviation: String,
     lore: String,
     category: String,
     construction: [ReducedItemSchema],
-    buffs: Schema.Types.Mixed,
-    abilityDescription: String,
+    bonus: Schema.Types.Mixed,
     cost: Number,
     canDisassemble: Boolean,
-    duration: [Number],
-    coolDown: [Number],
-    targetType: ItemTargetSchema,
-    notes: [String],
     possibleBuilds: [ReducedItemSchema]
 });
 
