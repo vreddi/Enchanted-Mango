@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const AbilityTargetSchema = new Schema({
     type: String,
-    target: String
+    target: String,
+    affects: String
 });
 
 const AbilitySchema = new Schema({
