@@ -15,6 +15,7 @@ const AbilitySchema = new Schema({
     duration: [Number],
     targetType: AbilityTargetSchema,
     notes: [String],
+    modifier: [String]
 });
 
 const ReducedItemSchema = new Schema({
@@ -23,7 +24,7 @@ const ReducedItemSchema = new Schema({
 });
 
 const ItemSchema = new Schema({
-    ability: [AbilitySchema]
+    abilities: [AbilitySchema]
     name: String,
     abbreviation: String,
     lore: String,

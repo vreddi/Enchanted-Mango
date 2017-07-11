@@ -9,8 +9,11 @@ describe('Creating Items', () => {
             abbreviation: 'TI',
             cost: 2765,
             category: 'Armor',
-            duration: [10 , 9, 8, 7, 6, 5],
-            coolDown: [80, 75, 70, 65, 60, 55]
+            abilities: [{
+                name: 'Test Ability',
+                duration: [10 , 9, 8, 7, 6, 5],
+                coolDown: [80, 75, 70, 65, 60, 55]
+            }]
         });
 
         item.save()
