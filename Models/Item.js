@@ -1,48 +1,43 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ReducedItemSchema = new Schema({
-    name: { type: String, required: true },
-    cost: { type: Number, require: true }
+const ItemDescription = new Schema({
+    name: { type: String, requred: true },
+    type: Number,
+    description: String,
+    manaCost: Number,
+    coolDown: [Number]
+})
+
+const ItemStat = new Schema({
+        name: { type: String, required: true },
+        value: Number,
+        statType: Number,
+        valueType: Number
 });
 
-const ItemTargetSchema = new Schema({
-    type: String,
-    target: String
+const ItemShopAvailability = new Schema({
+    sideShop: Boolean,
+    homeShop: Boolean,
+    SecretShop: Boolean
 });
 
 const ItemSchema = new Schema({
-    name: String,
-    abbreviation: String,
+    popularityRank: Number,
+    sourceLink: String,
+    localizedName: String,
+    name: { type: String, require: true },
     lore: String,
-    category: String,
-    construction: [ReducedItemSchema],
-    buffs: Schema.Types.Mixed,
-    abilityDescription: String,
-    cost: Number,
-    canDisassemble: Boolean,
-    duration: [Number],
-    coolDown: [Number],
-    targetType: ItemTargetSchema,
+    descriptions: [ItemDescription],
     notes: [String],
-    possibleBuilds: [ReducedItemSchema]
+    timesUsed: Number,
+    useRate: Number,
+    winRate: Number,
+    stats: [ItemStat],
+    cost: Number,
+    image: String,
+    aliases: [String],
+    shops: ItemShopAvailability
 });
 
-const Item = mongoose.model('Item', ItemSchema);
-
-module.exports = Item;
-
-// Get Items
-module.exports.getItems = (callback, limit) => {
-    Item.find(callback).limit(limit);
-}
-
-// Get Item by ID
-module.exports.getItemById = (itemId, callback) => {
-    Item.findById(itemId, callback);
-}
-
-// Get Item by name
-module.exports.getItemByName = (itemName, callback) => {
-    Item.find({ name: itemName }, callback);
-}
+mongoose.model('item', ItemSchema);
