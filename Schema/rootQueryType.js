@@ -9,7 +9,7 @@ const {
 } = graphql;
 
 const ItemType = require('./itemType');
-//const Item = mongoose.model('item');
+const Item = mongoose.model('item');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -17,7 +17,12 @@ const RootQuery = new GraphQLObjectType({
         items: {
             type: new GraphQLList(ItemType),
             resolve(parentValue) {
-                return axios.get('http://localhost:3000/items/').then(resp => resp.data);
+                if(process.env.ONLINE_MODE) {
+                    return Item.find({});
+                }
+                else {
+                    return axios.get('http://localhost:3000/items/').then(resp => resp.data);
+                }
             }
         }
     })

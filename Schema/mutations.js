@@ -20,7 +20,12 @@ const mutation = new GraphQLObjectType({
                 cost: { type: new GraphQLNonNull(GraphQLInt) }
             },
             resolve(parentValue, { name, cost }) {
-                return axios.post('http://localhost:3000/items', { name, cost }).then(resp => resp.data);
+                if(process.env.ONLINE_MODE) {
+                    // TODO
+                }
+                else {
+                    return axios.post('http://localhost:3000/items', { name, cost }).then(resp => resp.data);
+                }
             }
         }
     }
