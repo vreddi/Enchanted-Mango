@@ -1,1 +1,2 @@
 require('./Item');
+require('./Hero');
