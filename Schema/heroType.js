@@ -37,18 +37,20 @@ const HeroDistributedStatsRangeType = new GraphQLObjectType({
     })
 });
 
+const LaneType = {
+    name: 'LaneType',
+    values: {
+        Offlane: { value: 0 },
+        Safelane: { value: 1 },
+        Midlane: { value: 2 },
+        Jungle: { value: 3 }
+    }
+};
+
 const LanePresenceType = new GraphQLObjectType({
     name: 'LanePresence',
     fields: () => ({
-        lane: { type: new GraphQLEnumType({
-            name: 'LaneType',
-            values: {
-                Offlane: { value: 0 },
-                Safelane: { value: 1 },
-                Midlane: { value: 2 },
-                Jungle: { value: 3 }
-            }
-        })},
+        lane: { type: new GraphQLEnumType(LaneType) },
         presence: { type: GraphQLFloat },
         winRate: { type: GraphQLFloat },
         kdaRatio: { type: GraphQLFloat },
@@ -103,4 +105,13 @@ const HeroType = new GraphQLObjectType({
     })
 });
 
-module.exports = HeroType;
+module.exports = {
+    HeroType,
+    HeroAttackAnimationType,
+    HeroVisionRangeType,
+    LanePresenceType,
+    HeroDistributedStatsRangeType,
+    HeroDistributedStatsFloatType,
+    RangeFloatType,
+    LaneType
+};
