@@ -9,7 +9,7 @@ const {
 } = graphql;
 
 const ItemType = require('./itemType');
-const HeroType = require('./heroType');
+const { HeroType } = require('./heroType');
 const Item = mongoose.model('item');
 const Hero = mongoose.model('hero');
 
