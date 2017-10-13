@@ -4,9 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< Updated upstream
     "test": "_mocha --recursive Test/",
     "cover": "istanbul cover _mocha -- --recursive",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+=======
+<<<<<<< Updated upstream
+    "test": "mocha --recursive",
+=======
+    "test": "_mocha --recursive Test/",
+    "cover": "istanbul cover _mocha -- --recursive",
+    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     "json:server": "json-server --watch db.json",
     "dev": "nodemon server.js"
   },
