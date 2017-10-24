@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/vreddi/Enchanted-Mango#readme",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.17.0",
     "body-parser": "^1.17.2",
     "chai": "^4.1.2",
     "dotenv": "^4.0.0",
