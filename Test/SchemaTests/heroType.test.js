@@ -2,6 +2,9 @@
 
 const graphql = require('graphql');
 const chai = require('chai');
+const Hero = require('../../Schema/heroType');
+
+const expect = chai.expect;
 
 const {
     GraphQLString,
@@ -11,17 +14,16 @@ const {
     GraphQLEnumType
 } = graphql;
 
-const Hero = require('../../Schema/heroType');
-const LanePresenceType = Hero.LanePresenceType;
-const HeroDistributedStatsFloatType = Hero.HeroDistributedStatsFloatType;
-const HeroDistributedStatsRangeType = Hero.HeroDistributedStatsRangeType;
-const HeroAttackAnimationType = Hero.HeroAttackAnimationType;
-const HeroVisionRangeType = Hero.HeroVisionRangeType;
-const LaneType = Hero.LaneType;
-const RangeFloatType = Hero.RangeFloatType;
-const HeroType = Hero.HeroType;
-
-const expect = chai.expect;
+const {
+    LanePresenceType,
+    HeroDistributedStatsFloatType,
+    HeroDistributedStatsRangeType,
+    HeroAttackAnimationType,
+    HeroVisionRangeType,
+    LaneType,
+    RangeFloatType,
+    HeroType
+} = Hero;
 
 describe('HeroType', () => {
 
